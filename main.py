@@ -1,33 +1,31 @@
+while True:
+    choice = input("Choose [*, +, -, /] (or type 'exit' to quit): ")
 
-choice = input("choose [*,+,-,/]: ")
+    if choice == 'exit':
+        break
 
+    if choice in ['*', '+', '-', '/']:
+        num1 = int(input("Enter the first number: "))
+        num2 = int(input("Enter the second number: "))
 
-if choice == '*':
-    num1 = int(input("enter the first number :"))
-    num2 = int(input("enter the second number :"))
-    total = num1 * num2 
-    print(f"{num1}*{num2}={total}")
-
-elif choice  == '+':
-    num1 = int(input("enter the first number :"))
-    num2 = int(input("enter the second number :"))
-    total= num1 + num2 
-    print(f"{num1}+{num2}={total}")
-elif choice == '-':
-    num1 = int(input("enter the first number :"))
-    num2 = int(input("enter the second number :"))
-    total = num1 - num2 
-    print(f"{num1}-{num2}={total}")
-elif choice == '/':
-    num1 = int(input("enter the first number :"))
-    num2 = int(input("enter the second number :"))
-    if num2 == 0:
-        print('Zero not allowed , try again ')
+        if choice == '*':
+            total = num1 * num2
+            print(f"{num1}*{num2} = {total}")
+        elif choice == '+':
+            total = num1 + num2
+            print(f"{num1}+{num2} = {total}")
+        elif choice == '-':
+            total = num1 - num2
+            print(f"{num1}-{num2} = {total}")
+        elif choice == '/':
+            if num2 == 0:
+                print('Zero not allowed, try again.')
+            else:
+                total = num1 / num2
+                print(f"{num1}/{num2} = {total}")
     else:
-        total = num1 / num2 
-        print(f"{num1}/{num2}={total}")
-else:
-    print(" ERROR ERROR ERROR")
+        print("ERROR: Invalid choice. Please choose from [*, +, -, /] or type 'exit'.")
+
 
 
 
